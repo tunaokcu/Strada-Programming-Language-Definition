@@ -1,0 +1,68 @@
+
+/* This is a sample to demonstrate all the different capabilities of Strada like declaration, assignment, addition, subtraction */
+
+int sum = 0;
+int num_apples = 2;
+int num_mangoes = 3;
+sum = num_apples + num_mangoes;
+sum += 1;
+sum -= 1;
+sum = sum / 5;
+sum = sum * 2 /*NO SEMICOLON ERROR*/
+int total_num_of_fruits = sum;
+
+
+
+/* This is a simple program to sum integers in a strange manner to show the capabilities of Strada */
+
+int sumNumbers( int start , int end, int step ){ 
+	int sumEven = 0; int total, sumOdd; sumOdd = 0; total = 0; int arr[3]; arr[0] = sumEven; arr[1] = sumOdd; arr[2] = total; 
+	while(true){ 
+		/*NO SEMICOLON IN i+= step*/
+		for(int i = start; true; i += step){ if( true ){ arr[0] += i; arr[0] = arr[0] + i; arr[0] -= i; } else{ arr[1] += i; } }
+
+	arr[2] = arr[0] + arr[1];
+	break;
+	}
+
+return arr[2];				
+}
+
+int sum = sumNumbers(1, 100, 1);	
+
+
+
+
+/* This is not a special function. It is not called automatically upon compilation: it must be called inside the program(like in python). */
+int main(){	  	
+
+Node iotDevice; 
+		
+/* Strada is not designed to be an object-oriented language in the sense that users are not given the ability to define and use their own classes. However, the type called Node acts like a class. It can be thought of as the single class of this language. */
+/*User should declare a Node in order to use its methods*/
+
+iotDevice.flipSwitch(3);  			/* all flips turned off by default; this flips on the 3rd switch */
+iotDevice.flipSwitch(5); 			/* Switches are in range 1 and 10 */
+bool isSwitchOn = iotDevice.isOn(3); 	/* This returns 1 since it was just flipped on */
+long currentTime = iotDevice.time();		/* This function returns a long value since it is too large to be held in an int type*/
+
+string URL = "htps://www.cs.bilkent.edu.tr/~guvenir/courses/CS315/Pr1.htm";
+
+iotDevice.connect(URL);		/* This function connects our node to an URL*/
+int curVal = 10;			/* Value to be sent to the connection*/
+iotDevice.send(curVal);		/* Value of argument */
+
+/*FORGOT PARANTHESES*/
+int newVal = iotDevice.receive; 	/* New value received from connection */
+
+
+
+/*NO SUCH METHOD AS getSensors*/
+iotDevice.getSensors("temperature"); /* returns 10.9, the last value we set */
+iotDevice.getSensorNames(); 		 /* returns a string array of sensors containing their  names*/
+
+
+/* It is not required for a function to return anything. The void keyword is not present in our language, but any function(int main(), string getName(), etc) has the potential of returning nothing. */
+}
+/* Here, outside the function main, we call our function. If we did not do so it would only be a function definition and nothing would be done. */
+main();
